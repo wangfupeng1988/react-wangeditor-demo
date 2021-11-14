@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import { Modal, Button } from 'antd'
+// import ExtendEditor from './components/ExtendEditor'
+import MyEditor from './components/MyEditor'
 
 function App() {
+  // const [isModalVisible, setIsModalVisible] = useState(false)
+
+  // const showModal = () => {
+  //   setIsModalVisible(true);
+  // }
+
+  // const handleOk = () => {
+  //   setIsModalVisible(false);
+  // }
+
+  // const handleCancel = () => {
+  //   setIsModalVisible(false);
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Button type="primary" onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <MyEditor/>
+      </Modal> */}
+
+      <MyEditor/>
+      {/* <ExtendEditor/> */}
     </div>
   );
 }
