@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Modal, Button } from 'antd'
-// import ExtendEditor from './components/ExtendEditor'
-import MyEditor from './components/MyEditor'
+import ExtendEditor from './components/ExtendEditor'
+// import MyEditor from './components/MyEditor'
 
 function App() {
   // const [isModalVisible, setIsModalVisible] = useState(false)
@@ -27,8 +27,8 @@ function App() {
         <MyEditor/>
       </Modal> */}
 
-      <MyEditor/>
-      {/* <ExtendEditor/> */}
+      {/* <MyEditor/> */}
+      <ExtendEditor/>
     </div>
   );
 }

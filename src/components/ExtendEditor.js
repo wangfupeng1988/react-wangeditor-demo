@@ -1,52 +1,88 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import '@wangeditor/editor/dist/css/style.css'
 import { h } from 'snabbdom'
-import { Boot, i18nChangeLanguage } from '@wangeditor/editor'
+import { Boot, SlateTransforms } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 
-i18nChangeLanguage('en')
+// 插件
+function widthMention(editor) {
+    const newEditor = editor
+    const { isVoid, isInline } = editor
+
+    newEditor.isVoid = (elem) => {
+        const { type } = elem
+        if (type === 'mention') return true
+        return isVoid(elem)
+    }
+
+    newEditor.isInline = elem => {
+        const { type } = elem
+        if (type === 'mention') return true
+        return isInline(elem)
+      }
+
+    return newEditor
+}
+Boot.registerPlugin(widthMention)
 
 // 渲染函数
 function fn(elem, children, editor) {
-    console.log(111)
-    // elem 即当前节点
-    // children 是下级节点
-    // editor 即编辑器实例
-    const vnode = h('div', {}, children)
+    console.log('elem----', elem)
+    // console.log('children----', children)
+    const vnode = h(
+        'div', 
+        {
+            style: {
+                backgroundColor: 'yellow',
+                display: 'inline-block',
+                margin: '0 10px'
+            },
+            props: { contentEditable: false  }
+        }, 
+        [
+            h('span', { style: { color: 'red' } }, `@${elem.title}`)
+        ]
+    )
     return vnode
 }
 const conf = {
-    type: 'paragraph', // 节点 type ，重要！！！
+    type: 'mention',
     renderElem: fn,
 }
-// 注册到 wangEditor
 Boot.registerRenderElem(conf)
 
 function MyEditor() {
-    // 存储 editor 实例
     const [editor, setEditor] = useState(null)
 
     // editor 配置
     const editorConfig = {}
     editorConfig.placeholder = '请输入内容...'
     editorConfig.onCreated = (editor) => {
-        // 记录 editor 实例，重要 ！
-        // 有了 editor 实例，就可以执行 editor API
         setEditor(editor)
+
+        window.editor = editor // 方便调试
+    }
+
+    function insertMention() {
+        const node = {
+            type: 'mention',
+            title: '张三',
+            children: [{text: ''}]
+        }
+        SlateTransforms.insertNodes(editor, node)
+        // editor.insertNode(node)
     }
 
     return (
-        <React.Fragment>
+        <>
+            <button onClick={insertMention}>insert mention</button>
             <div style={{ border: '1px solid #ccc', zIndex: 100}}>
-                {/* 渲染 toolbar */}
                 <Toolbar
                     editor={editor}
                     defaultConfig={{}}
                     mode="default"
                     style={{ borderBottom: '1px solid #ccc' }}
                 />
-
-                {/* 渲染 editor */}
                 <Editor
                     defaultConfig={editorConfig}
                     defaultContent={[]}
@@ -54,7 +90,7 @@ function MyEditor() {
                     style={{ height: '500px' }}
                 />
             </div>
-        </React.Fragment>
+        </>
     )
 }
 
