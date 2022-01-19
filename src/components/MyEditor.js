@@ -5,17 +5,19 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 function MyEditor() {
     const [editor, setEditor] = useState(null) // 存储 editor 实例
     // const defaultContent = []
-    const [defaultContent, setDefaultContent] = useState([])
+    // const [defaultContent, setDefaultContent] = useState([])
+    const [defaultHtml, setDefaultHtml] = useState('<p><br></p>')
     const [isEditorShow, setIsEditorShow] = useState(false)
 
     // 模拟 ajax 请求
     setTimeout(() => {
-        setDefaultContent([
-            {
-                type: "paragraph",
-                children: [{ text: "ajax 异步获取的内容" }],
-            }
-        ])
+        // setDefaultContent([
+        //     {
+        //         type: "paragraph",
+        //         children: [{ text: "ajax 异步获取的内容" }],
+        //     }
+        // ])
+        setDefaultHtml('<p>hello&nbsp;<strong>world</strong>.</p>\n<p><br></p>')
         setIsEditorShow(true)
     }, 1000)
 
@@ -51,7 +53,8 @@ function MyEditor() {
                 />
                 <Editor
                     defaultConfig={editorConfig}
-                    defaultContent={defaultContent}
+                    // defaultContent={defaultContent}
+                    defaultHtml={defaultHtml}
                     mode="default"
                     style={{ height: '500px' }}
                 />
