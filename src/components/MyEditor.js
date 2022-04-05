@@ -1,3 +1,8 @@
+/**
+ * @description React wangEditor usage
+ * @author wangfupeng
+ */
+
 import React, { useState, useEffect } from 'react'
 import '@wangeditor/editor/dist/css/style.css'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
