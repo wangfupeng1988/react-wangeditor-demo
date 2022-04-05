@@ -1750,6 +1750,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
+"@types/event-emitter@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@types/event-emitter/-/event-emitter-0.3.3.tgz#727032a9fc67565f96bbd78b2e2809275c97d7e7"
+  integrity sha512-UfnOK1pIxO7P+EgPRZXD9jMpimd8QEFcEZ5R67R1UhGbv4zghU5+NE7U8M8G9H5Jc8FI51rqDWQs6FtUfq2e/Q==
+
 "@types/glob@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.3.tgz#e6ba80f36b7daad2c685acd9266382e68985c183"
@@ -2063,50 +2068,51 @@
     "@uppy/utils" "^4.0.3"
     nanoid "^3.1.25"
 
-"@wangeditor/basic-modules@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/basic-modules/-/basic-modules-0.10.0.tgz#587ceea183520236e432d5b1af6107a128698ed9"
-  integrity sha512-6sOphIhp1YPG8xjOa2jKQ/mMc2PHr98xACguS6ofCZghRCSjpoYLAR8lbRN47wAAfmX2KJ94VnxVQpCPHOKpqg==
+"@wangeditor/basic-modules@^0.11.12":
+  version "0.11.12"
+  resolved "https://registry.yarnpkg.com/@wangeditor/basic-modules/-/basic-modules-0.11.12.tgz#03b3266e483fe11952b887985319edcc734ebf92"
+  integrity sha512-m94GIcEmA2US/oIBMsp+gMr3fMB6udKjIbN2SZX4rKExoQtoDynew3Eq4Dn1XhotQgSXNMx5cjvtSB13Jo3Kig==
   dependencies:
     is-url "^1.2.4"
 
-"@wangeditor/code-highlight@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/code-highlight/-/code-highlight-0.8.0.tgz#0d6fbb8a1a71b7e2829248d6f21276a73bab9234"
-  integrity sha512-MXNnj3wtTzzSUYcq8EClMeXskrwvq0RGL20uxETrmaSxNJOqE1XBkK+9S3L+pu+nbFmtCn3YXGGqZ9+9sc3s1A==
+"@wangeditor/code-highlight@^0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@wangeditor/code-highlight/-/code-highlight-0.9.6.tgz#c3fa088bbf248f8114122063c607322817806a04"
+  integrity sha512-w9IB3GYwd+09htZmlOpKc0jQ0GzFgMOQViKC4777qfVaMLvCBYTWCgijs/WLRmiOxH0I8SX88xsFXXIq/YrztQ==
   dependencies:
     prismjs "^1.23.0"
 
-"@wangeditor/core@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/core/-/core-0.14.0.tgz#8429e2a4010bf50003d9e254cab1f899ca490e70"
-  integrity sha512-R6bA6siXdSRJ7p/z3lmKCiiUw9T7znjUNFBhwu0VPvMjYxNNbBLfDRcX5dkEQ8Z9EKhAhaCD/rDZuIJ0sZ9Wnw==
+"@wangeditor/core@^0.14.17":
+  version "0.14.17"
+  resolved "https://registry.yarnpkg.com/@wangeditor/core/-/core-0.14.17.tgz#6a4e6f168cca3514ff95770ec065a4bc00287c5d"
+  integrity sha512-QQz8zSsHcvEUxx5qce6GacocE2TyHI7SSz9KxpeTClOsf0WGOHJhOW+94DLgfEhJWcOsmT0BUNPHhGRSphBcPg==
   dependencies:
+    "@types/event-emitter" "^0.3.3"
     event-emitter "^0.3.5"
     html-void-elements "^2.0.0"
     i18next "^20.4.0"
     scroll-into-view-if-needed "^2.2.28"
     slate-history "^0.66.0"
 
-"@wangeditor/editor-for-react@^0.6.20":
-  version "0.6.20"
-  resolved "https://registry.yarnpkg.com/@wangeditor/editor-for-react/-/editor-for-react-0.6.20.tgz#cd6b3dc77681eb82d5482095c6fe2dc805e83097"
-  integrity sha512-QA9AEjzPKngh5htKSsS6eRcS7l4ig5Z2e0vOYafkiU2ELjmHpXM6AKUdP+fbRDf8Xjxx4hDFRcJcMAOxi7S4gw==
+"@wangeditor/editor-for-react@^0.6.26":
+  version "0.6.26"
+  resolved "https://registry.yarnpkg.com/@wangeditor/editor-for-react/-/editor-for-react-0.6.26.tgz#94ebd8fc895c1ef164517c0541aec705ed995750"
+  integrity sha512-T7vGHrOYLW2d2ZL8FADksMjxFfQ6gUZqXDmlQo/1K3y9nXRYm0SgeXr/ZjyhO16DROmIECDBQvzYpASeYIsFwA==
 
-"@wangeditor/editor@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/editor/-/editor-0.14.0.tgz#75bb5353a26e806f0d6aae1cebab73482070065f"
-  integrity sha512-BGFQBDjpFasPnPgMCPDPjvGGNuqLe2V4UQ2QTb80LgqiVNLYIuvA9IqU1SYkNP6XlcDrGK8cvpfUeV80O/UmRA==
+"@wangeditor/editor@^0.15.18":
+  version "0.15.18"
+  resolved "https://registry.yarnpkg.com/@wangeditor/editor/-/editor-0.15.18.tgz#1101706fbaf5f083fb504902b37ffed188a539fd"
+  integrity sha512-N0pTgdyaODC+4VXjpx02SdGWcw1FVRUTFt5MoUmPVqNS6AJ4tYEeYaEHmgF9dTMSi7du2EV6t7LuFjW/QgNuEw==
   dependencies:
     "@uppy/core" "^2.1.1"
     "@uppy/xhr-upload" "^2.0.3"
-    "@wangeditor/basic-modules" "^0.10.0"
-    "@wangeditor/code-highlight" "^0.8.0"
-    "@wangeditor/core" "^0.14.0"
-    "@wangeditor/list-module" "^0.8.0"
-    "@wangeditor/table-module" "^0.9.0"
-    "@wangeditor/upload-image-module" "^0.7.13"
-    "@wangeditor/video-module" "^0.9.0"
+    "@wangeditor/basic-modules" "^0.11.12"
+    "@wangeditor/code-highlight" "^0.9.6"
+    "@wangeditor/core" "^0.14.17"
+    "@wangeditor/list-module" "^0.9.5"
+    "@wangeditor/table-module" "^0.10.10"
+    "@wangeditor/upload-image-module" "^0.8.4"
+    "@wangeditor/video-module" "^0.10.11"
     dom7 "^3.0.0"
     is-hotkey "^0.2.0"
     lodash.camelcase "^4.3.0"
@@ -2116,29 +2122,29 @@
     lodash.isequal "^4.5.0"
     lodash.throttle "^4.1.1"
     lodash.toarray "^4.4.0"
-    nanoid "^3.1.30"
+    nanoid "^3.2.0"
     slate "^0.72.0"
     snabbdom "^3.1.0"
 
-"@wangeditor/list-module@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/list-module/-/list-module-0.8.0.tgz#81a88db8aa08e49b9d265937db3b89f19a2df0c9"
-  integrity sha512-Y4Koisqc/+FE4Ypj6j76Mjpy5bWzdqMtp+JYlKCdkveS2L8ns2yFIkXbhvP60hfZ4ycQDwufyzk6r83pq+RuVg==
+"@wangeditor/list-module@^0.9.5":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@wangeditor/list-module/-/list-module-0.9.5.tgz#572d2ed2deb72efd705286805b1d99769caf6597"
+  integrity sha512-q0rAapCJqhMziT9EqplHEnPZ/XdoNvw0+fzfAKWyJqzxoFuPfU6dpbrMONSAsvT8EYwunyGJBzOfZpsFrwY63g==
 
-"@wangeditor/table-module@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/table-module/-/table-module-0.9.0.tgz#7166f2e057968af1bab6fb43fce48ef4d976f793"
-  integrity sha512-hWfa9wAkmJWLjIv/utj6qZXbAvkKUK8wuO1bm2N+MZ97nf68Dj7/Vw7v+Wmd7QN3HZtUbdRIUu4Y+CSk7JI1Jg==
+"@wangeditor/table-module@^0.10.10":
+  version "0.10.10"
+  resolved "https://registry.yarnpkg.com/@wangeditor/table-module/-/table-module-0.10.10.tgz#aae84c06a4e2f947a2e59f8755ce4e05c6e09f11"
+  integrity sha512-mG1EWZwHZulwlbo6ZtlUuhMo6WFvDkt9OT/sI3RVwlRmxC/aVM61M3knppG2NnNTa5OItRjrzqwDrLu32TrPmw==
 
-"@wangeditor/upload-image-module@^0.7.13":
-  version "0.7.13"
-  resolved "https://registry.yarnpkg.com/@wangeditor/upload-image-module/-/upload-image-module-0.7.13.tgz#2204a4c4dceae934505f4eea32fd3ec1932abae0"
-  integrity sha512-7fOSXz+UjMOclNaWhfD75nvtA+ZzEnIKGT34Ij19IowbBhoa/RyFSggTqciAnVTf2skriW3Gt9/eHYbLPL4KTQ==
+"@wangeditor/upload-image-module@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@wangeditor/upload-image-module/-/upload-image-module-0.8.4.tgz#13bd8715f11242221f317ba6be9fa072b6c11cc2"
+  integrity sha512-WbXT8/GRRB7wMV8otkrkG/09x4kBrc/xgGGeR0aeM2RJr2Eg1SiG6JQThjZazXXpZPGpoeIzMOqM9UpPq07EUg==
 
-"@wangeditor/video-module@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@wangeditor/video-module/-/video-module-0.9.0.tgz#b1bbaed0e3ebb9cea43bab9b253aeed28d2628ed"
-  integrity sha512-2J0wn+dvGnODNyvGogsUFbePIMIk2hJpiPr5bSQlH/njvvUZZfcdjhIS6a3pkTVrTUhkgj/iEDX2UmetbXj0/A==
+"@wangeditor/video-module@^0.10.11":
+  version "0.10.11"
+  resolved "https://registry.yarnpkg.com/@wangeditor/video-module/-/video-module-0.10.11.tgz#a25f6a8a4e96bcb86f3e19ba0ab464f3d43befb4"
+  integrity sha512-JSz+Vxo5d0v6+8OkexYZYxhrU4zD2IoukMem3WmxrazhYkSh8wOIr9EJ0ZRQnKA7g9WkTV/k9kgF+W9ppij1MQ==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -7699,10 +7705,15 @@ nanoid@^3.1.20:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
   integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
 
-nanoid@^3.1.25, nanoid@^3.1.30:
+nanoid@^3.1.25:
   version "3.1.30"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
   integrity sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==
+
+nanoid@^3.2.0:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.2.tgz#c89622fafb4381cd221421c69ec58547a1eec557"
+  integrity sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==
 
 nanomatch@^1.2.9:
   version "1.2.13"

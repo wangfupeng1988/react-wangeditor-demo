@@ -4,27 +4,18 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 
 function MyEditor() {
     const [editor, setEditor] = useState(null) // 存储 editor 实例
-    // const defaultContent = []
-    // const [defaultContent, setDefaultContent] = useState([])
-    const [defaultHtml, setDefaultHtml] = useState('<p><br></p>')
-    const [isEditorShow, setIsEditorShow] = useState(false)
+    const [html, setHtml] = useState('<p>hello</p>')
 
-    // 模拟 ajax 请求
-    setTimeout(() => {
-        // setDefaultContent([
-        //     {
-        //         type: "paragraph",
-        //         children: [{ text: "ajax 异步获取的内容" }],
-        //     }
-        // ])
-        setDefaultHtml('<p>hello&nbsp;<strong>world</strong>.</p>\n<p><br></p>')
-        setIsEditorShow(true)
-    }, 1000)
+    // 模拟 ajax 请求，异步设置 html
+    useEffect(() => {
+        setTimeout(() => {
+            setHtml('<p>hello&nbsp;<strong>world</strong>.</p>\n<p><br></p>')
+        }, 1500)
+    }, [])
 
     const toolbarConfig = { }
     const editorConfig = {
         placeholder: '请输入内容...',
-        onCreated(editor) { setEditor(editor) }
     }
 
     // 及时销毁 editor
@@ -38,13 +29,22 @@ function MyEditor() {
 
     function insertText() {
         if (editor == null) return
-        console.log(editor.insertText('hello'))
+        editor.insertText(' hello ')
+    }
+
+    function printHtml() {
+        if (editor == null) return
+        console.log(editor.getHtml())
     }
 
     return (
         <>
-            <button onClick={insertText}>insert text</button>
-            {isEditorShow && <div style={{ border: '1px solid #ccc', zIndex: 100}}>
+            <div>
+                <button onClick={insertText}>insert text</button>
+                <button onClick={printHtml}>print html</button>
+            </div>
+
+            <div style={{ border: '1px solid #ccc', zIndex: 100, marginTop: '15px'}}>
                 <Toolbar
                     editor={editor}
                     defaultConfig={toolbarConfig}
@@ -53,13 +53,16 @@ function MyEditor() {
                 />
                 <Editor
                     defaultConfig={editorConfig}
-                    // defaultContent={defaultContent}
-                    defaultHtml={defaultHtml}
+                    value={html}
+                    onCreated={setEditor}
+                    onChange={editor => setHtml(editor.getHtml())}
                     mode="default"
                     style={{ height: '500px' }}
                 />
-            </div>}
-            {!isEditorShow && <p>loading</p>}
+            </div>
+            <div style={{ marginTop: '15px' }}>
+                {html}
+            </div>
         </>
     )
 }

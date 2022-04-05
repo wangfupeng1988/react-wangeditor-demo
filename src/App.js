@@ -1,6 +1,5 @@
 import React from 'react'
 // import { Modal, Button } from 'antd'
-// import ExtendEditor from './components/ExtendEditor'
 import MyEditor from './components/MyEditor'
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
       </Modal> */}
 
       <MyEditor/>
-      {/* <ExtendEditor/> */}
     </div>
   );
 }
